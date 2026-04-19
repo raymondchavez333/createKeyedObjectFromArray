@@ -4,8 +4,22 @@ let users = [
   {id: 'pete', name: "Pete Peterson", age: 31},
 ];
 
+
+function groupById(arr){
+
+  return  arr.reduce(function (accumulator, item) {
+      let newId = item.id;
+
+      if(!accumulator[newId]){
+        accumulator[newId] = {};
+      }
+      accumulator[newId] = (item);
+      return accumulator;
+    }, {});
+}
 let usersById = groupById(users);
 
+console.log(usersById);
 /*
 // after the call we should have:
 
